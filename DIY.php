@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Make Your Own</title>
+<title>Make your own NJ bus dashboard</title>
 <link rel="stylesheet" type="text/css" href="busstyle.css" />
 </head>
 <body>
-<h2>Enter up to three stops to get bus info.</h2>
+<h2>Enter up to three stops to get NJ Transit bus info.</h2>
 <form action="get_my_bus.php">
 Route # (e.g. 167)<br>
 <input type="text" name="route1" value="167" id="form"><br>
