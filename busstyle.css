@@ -1,0 +1,43 @@
+body {
+  background-color: #f0f0f0;
+  font-family: “Trebuchet MS”, Verdana, Arial, serif;
+}
+h1 {
+  color:blue;
+}
+#intro{
+    background-color:#fafafa;
+    padding:5px;
+    text-align:center; 
+}
+#stock_intro{
+    background-color:#f0f0f0;
+    padding:5px;
+    text-align:center; 
+}
+input {
+    font-size:x-large;
+    font-weight:bold;
+    width:200px;
+    height:50px;
+}
+#form{
+    width:100px;
+    height:25px;
+    font-weight:normal;
+    font-size:normal;
+}
+#demo {
+    font-weight:bold;
+}
+#result{
+    background-color:#c0c0c0;
+    padding:5px;
+    text-align:center; 
+}
+#note{
+    font-size:x-small;
+    background-color:#ffffff;
+    padding:5px;
+    text-align:center; 
+}
