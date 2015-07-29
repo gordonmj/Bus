@@ -6,6 +6,7 @@
 </head>
 <body>
 <h2>Enter up to three stops to get NJ Transit bus info.</h2>
+<img src="whichway2.jpg">
 <form action="get_my_bus.php">
 Route # (e.g. 167)<br>
 <input type="text" name="route1" value="167" id="form"><br>
@@ -30,6 +31,7 @@ Description:<br>
 
 <p><a href="ToTeaneck.php">Buses from NY to Teaneck</a></p>
 <p><a href="OtherTeaneck.php">Other Teaneck buses</a></p>
+<br><br>If you want to share this, use the URL http://bit.ly/NJBus so I can track the clicks.
 
 </body>
 </html>
