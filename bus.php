@@ -72,8 +72,15 @@ function add_to_db($route,$stop,$dest,$vehicle,$minutes){
 
 	$result = mysql_query($query);
 
-	$query = "insert into stops (route,stop,dest,minutesto,bus,time,id) values (" . $route . "," . $stop . "," . $dest . "," . $minutes . "," . $vehicle . ", now(),null)";
-	echo $query;
+	$query = "INSERT INTO stops (route,stop,dest,minutesto,bus,time,id) VALUES(
+		'$route'
+		,'$stop'
+		,'$dest'
+		,'$minutes'
+		,'$vehicle'
+		,'now()'
+		,'null')";
+
 	$result = mysql_query($query);
 	
 	$query = "delete from stops where id=1";

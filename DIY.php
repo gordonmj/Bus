@@ -12,18 +12,25 @@ Route # (e.g. 167)<br>
 <input type="text" name="route1" value="167" id="form"><br>
 Stop # (e.g. 13695)<br>
 <input type="text" name="stop1" value="13695" id="form"><br>
+Destination # - optional<br>
+<input type="text" name="dest1" value="0" id="form"><br>
 Stop description - optional (e.g. "Cedar Lane and Queen Anne Road")<br>
-<input type="text" name="desc1" value="Queen Anne & Cherry Ln" id="form"><br><br>
+<input type="text" name="desc1" value="Queen Anne & Cherry Ln" id="form"><br>
+<br>
 Route:<br>
 <input type="text" name="route2" value="167" id="form"><br>
 Stop:<br>
 <input type="text" name="stop2" value="13787" id="form"><br>
+Destination #<br>
+<input type="text" name="dest2" value="0" id="form"><br>
 Description:<br>
 <input type="text" name="desc2" value="Teaneck Rd & Grayson" id="form"><br><br>
 Route:<br>
 <input type="text" name="route3" value="175" id="form"><br>
 Stop:<br>
 <input type="text" name="stop3" value="13630" id="form"><br>
+Destination #<br>
+<input type="text" name="dest3" value="0" id="form"><br>
 Description:<br>
 <input type="text" name="desc3" value="Cedar Ln & Grange" id="form"><br>
 <input type="submit" value="Submit"><br>
