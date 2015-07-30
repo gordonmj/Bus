@@ -7,6 +7,7 @@
 <body>
 <?php
 date_default_timezone_set("America/New_York");
+
 function getTimeNow(){
 	$now = strtotime("now");
 	echo "It's now " . date("h:i:sa", $now) . "<br>";
@@ -26,6 +27,7 @@ function isCurrent($time){
 }
 
 function getTimes($bus, $stop, $name){
+	add_to_db($bus,$stop);
 	$bnum = substr($bus,0,3);
     	$url = "http://mybusnow.njtransit.com/bustime/wireless/html/eta.jsp?route=" . $bnum . "&direction=New+York&id=" . $stop . "&showAllBusses=off";
     	$content = file_get_contents($url);
@@ -51,6 +53,34 @@ function getTimes($bus, $stop, $name){
 	}
 	echo " <a href=' $url'>link</a><br>"; 
 }//func
+function add_to_db($route,$stop){
+	$host="localhost";
+	$user="root";
+	$password="MacGuffin5%m";
+	$dbname="bus";
+	$con = mysql_connect($host, $user, $password, $dbname);
+	if (!$con){
+        	die("Could not connect: " . mysql_error());
+		echo mysql_error();
+	}
+
+	$query = "use bus";
+
+	$result = mysql_query($query);
+
+	$query = "insert into stops (route,stop,bus,time,id) values (" . $route . "," . $stop . ",0, now(),null)";
+	
+	$result = mysql_query($query);
+	
+	$query = "delete from stops where id=1";
+
+	$result = mysql_query($result);
+
+	mysql_free_result($result);
+	
+	mysql_close($con);
+}//func
+
 ?>
 </body>
 </html>
