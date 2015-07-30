@@ -26,23 +26,26 @@ function isCurrent($time){
 	}
 }
 
-function getTimes($bus, $stop, $name){
-	add_to_db($bus,$stop);
+function getTimes($bus, $stop, $name,$dest=" ",$walking=0){
+	$count = 0;
 	$bnum = substr($bus,0,3);
     	$url = "http://mybusnow.njtransit.com/bustime/wireless/html/eta.jsp?route=" . $bnum . "&direction=New+York&id=" . $stop . "&showAllBusses=off";
     	$content = file_get_contents($url);
 	$pos = strpos($content,"Currently")+10;
 	$time = substr($content,$pos,6);
     	$pos = strpos($content,"MIN")-8;
-	if ($pos < 0) return; //echo " is not available ";
+	if ($pos < 0) return count; //echo " is not available ";
+	
 	echo '<font size ="30"> ' . $bus . " at " . $name . ' in';
 	while ($pos > 0){
 		$content = substr($content,$pos);
 		preg_match('/([0-9][0-9]?)/', $content, $TimeMatch);
 		echo ':<font color="red"> ' . $TimeMatch[1] . '</font> min ';
-		preg_match('/To (1[67][75][TQ]?)/', $content, $BusMatch);
+		preg_match('/\(Bus ([0-9]{4})/', $content, $BusMatch);
+		add_to_db($bus,$stop,$dest,$BusMatch[1],$TimeMatch[1]);
 		$content = substr($content,25);
 		$pos = strpos($content,"MIN")-8;
+		$count++;
 	}
     	echo "<br></font>Stop # $stop. ";
 	if (isCurrent($time)){
@@ -51,9 +54,10 @@ function getTimes($bus, $stop, $name){
 	else {
 		echo " <font color='brown'>Last updated at $time </font>";
 	}
-	echo " <a href=' $url'>link</a><br>"; 
+	echo " <a href=' $url'>link</a><br>";
+	return count; 
 }//func
-function add_to_db($route,$stop){
+function add_to_db($route,$stop,$dest,$vehicle,$minutes){
 	$host="localhost";
 	$user="root";
 	$password="MacGuffin5%m";
@@ -68,8 +72,8 @@ function add_to_db($route,$stop){
 
 	$result = mysql_query($query);
 
-	$query = "insert into stops (route,stop,bus,time,id) values (" . $route . "," . $stop . ",0, now(),null)";
-	
+	$query = "insert into stops (route,stop,dest,minutesto,bus,time,id) values (" . $route . "," . $stop . "," . $dest . "," . $minutes . "," . $vehicle . ", now(),null)";
+	echo $query;
 	$result = mysql_query($query);
 	
 	$query = "delete from stops where id=1";
