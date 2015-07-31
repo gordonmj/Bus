@@ -15,9 +15,9 @@
 
 <?php
 include 'bus.php';
-getTimes("780","13633","Cedar & Grange");
-getTimes("780","13623","Cedar & W. Catalpa");
-getTimes("780","12221","Summit & W. Pleasantview");
+getTimes("780","13633","Cedar & Grange","5");
+getTimes("780","13623","Cedar & W. Catalpa","5");
+getTimes("780","12221","Summit & W. Pleasantview","20");
 ?>
 
 </body>

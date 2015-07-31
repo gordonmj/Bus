@@ -45,3 +45,7 @@ img {
     height:500px;
     width:500px:
 }
+embed {
+    height:0px;
+    width:0px;
+}
