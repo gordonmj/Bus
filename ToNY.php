@@ -10,10 +10,10 @@
 <p>It's still very much in the early stages, and useful only to me, most likely, but if you commute from central Teaneck to Manhattan, you might find it useful too.</p>
 <?php
 include 'bus.php';
-getTimes("167T","13787","Teaneck & Grayson");
-getTimes("167Q","13695", "Q.A. & Cherry");
-getTimes("175","13630","Cedar & Grange");
-getTimes("171","13732","Rt4 & Margaret");
+getTimes("167T","13787","Teaneck & Grayson","31858","7");
+getTimes("167Q","13695", "Q.A. & Cherry","31858","5");
+getTimes("175","13630","Cedar & Grange","31737","6");
+getTimes("171","13732","Rt4 & Margaret","31737","15");
 ?>
 <p></p>
 <FORM>

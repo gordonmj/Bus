@@ -13,7 +13,8 @@ Route # (e.g. 167)<br>
 Stop # (e.g. 13695)<br>
 <input type="text" name="stop1" value="13695" id="form"><br>
 Stop description - optional (e.g. "Cedar Lane and Queen Anne Road")<br>
-<input type="text" name="desc1" value="Queen Anne & Cherry Ln" id="form"><br><br>
+<input type="text" name="desc1" value="Queen Anne & Cherry Ln" id="form"><br>
+<br>
 Route:<br>
 <input type="text" name="route2" value="167" id="form"><br>
 Stop:<br>
@@ -31,7 +32,6 @@ Description:<br>
 
 <p><a href="ToTeaneck.php">Buses from NY to Teaneck</a></p>
 <p><a href="OtherTeaneck.php">Other Teaneck buses</a></p>
-<br><br>If you want to share this, use the URL http://bit.ly/NJBus so I can track the clicks.
 
 </body>
 </html>

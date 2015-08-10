@@ -15,8 +15,8 @@
 
 <?php
 include 'bus.php';
-getTimes("167Q","13681","Q.A. & Carlton");
-getTimes("167T","13755","Teaneck & Holland");
+getTimes("167Q","13681","Q.A. & Carlton","","5");
+getTimes("167T","13755","Teaneck & Holland","","7");
 ?>
 
 </body>
